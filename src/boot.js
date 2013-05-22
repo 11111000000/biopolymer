@@ -6,21 +6,31 @@
 
 (function(scope) {
 
-// add a notation about polymer document modifications
-document.write('<!-- begin Polymer injections -->\n');
+var flags = {};
+if (!flags.noOpts) {
+  location.search.slice(1).split('&').forEach(function(o) {
+    o = o.split('=');
+    o[0] && (flags[o[0]] = o[1] || true);
+  });
+}
 
-// mobile compatibility tags
-// TODO(sjmiles): we probably cannot get away with forcing these in general
-document.write('<!-- injected meta tags for mobile -->\n');
-document.write('<meta name="apple-mobile-web-app-capable" content="yes">\n');
-document.write('<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">\n');
+if (!flags.csp) {
+  // add a notation about polymer document modifications
+  document.write('<!-- begin Polymer injections -->\n');
 
-// FOUC prevention tactic
-document.write('<!-- injected FOUC prevention -->\n');
-document.write('<style>body {opacity: 0;}</style>');
+  // mobile compatibility tags
+  // TODO(sjmiles): we probably cannot get away with forcing these in general
+  document.write('<!-- injected meta tags for mobile -->\n');
+  document.write('<meta name="apple-mobile-web-app-capable" content="yes">\n');
+  document.write('<meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">\n');
 
-// done with write
-document.write('<!-- end Polymer injections -->\n');
+  // FOUC prevention tactic
+  document.write('<!-- injected FOUC prevention -->\n');
+  document.write('<style>body {opacity: 0;}</style>');
+
+  // done with write
+  document.write('<!-- end Polymer injections -->\n');
+}
 
 window.addEventListener('WebComponentsReady', function() {
   document.body.style.webkitTransition = 'opacity 0.3s';

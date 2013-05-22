@@ -1,0 +1,9 @@
+element {
+  display: none;
+}
+template {
+  display: none;
+}
+body {
+  opacity: 0;
+}
