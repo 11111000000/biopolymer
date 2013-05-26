@@ -1,8 +1,10 @@
-# Polymer
+# Biopolymer - Polymer on LiveScript
 
-Build Status: [http://build.chromium.org/p/client.polymer/waterfall](http://build.chromium.org/p/client.polymer/waterfall)
+Research and education branch
 
-## Brief Overview
+Build Status of Polymer: [http://build.chromium.org/p/client.polymer/waterfall](http://build.chromium.org/p/client.polymer/waterfall)
+
+## Brief Overview of Polymer
 
 For more detailed info goto [http://polymer-project.org/](http://polymer-project.org/).
 
