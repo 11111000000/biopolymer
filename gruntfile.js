@@ -13,21 +13,21 @@ module.exports = function(grunt) {
   ];
   
   Polymer = [
-    'src/lang.js',
-    'src/oop.js',
-    'src/register.js',
-    'src/base.js',
-    'src/bindProperties.js',
-    'src/bindMDV.js',
-    'src/attrs.js',
-    'src/marshal.js',
-    'src/events.js',
-    'src/observeProperties.js',
-    'src/styling.js',
-    'src/shimStyling.js',
-    'src/path.js',
-    'src/job.js',
-    'src/boot.js'
+    'src/lang.ls',
+    'src/oop.ls',
+    'src/register.ls',
+    'src/base.ls',
+    'src/bindProperties.ls',
+    'src/bindMDV.ls',
+    'src/attrs.ls',
+    'src/marshal.ls',
+    'src/events.ls',
+    'src/observeProperties.ls',
+    'src/styling.ls',
+    'src/shimStyling.ls',
+    'src/path.ls',
+    'src/job.ls',
+    'src/boot.ls'
   ];
 
   // karma setup
@@ -69,6 +69,13 @@ module.exports = function(grunt) {
         browsers: browsers
       }
     },
+    livescript: {
+      src: {
+        files: {
+          'polymer.js': Polymer
+        }
+      }
+    },
     uglify: {
       Polymer: {
         options: {
@@ -108,12 +115,13 @@ module.exports = function(grunt) {
   });
 
   // plugins
+  grunt.loadNpmTasks('grunt-livescript');
   grunt.loadNpmTasks('grunt-contrib-uglify');
   grunt.loadNpmTasks('grunt-contrib-yuidoc');
   grunt.loadNpmTasks('grunt-karma-0.9.1');
 
   // tasks
-  grunt.registerTask('default', ['uglify']);
+  grunt.registerTask('default', ['livescript']);
   grunt.registerTask('minify', ['uglify']);
   grunt.registerTask('docs', ['yuidoc']);
   grunt.registerTask('test', ['karma:polymer']);

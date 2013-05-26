@@ -5,6 +5,7 @@
     "mocha": "*",
     "chai": "*",
     "grunt": "*",
+    "grunt-livescript": "*",
     "grunt-contrib-uglify": "*",
     "grunt-contrib-yuidoc": "*",
     "grunt-karma-0.9.1": "~0.4.3",
