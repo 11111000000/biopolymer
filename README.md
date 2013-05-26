@@ -1,6 +1,6 @@
 # Biopolymer - Polymer on LiveScript
 
-Research and education branch
+Functional research branch
 
 Build Status of Polymer: [http://build.chromium.org/p/client.polymer/waterfall](http://build.chromium.org/p/client.polymer/waterfall)
 
